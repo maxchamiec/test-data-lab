@@ -2,6 +2,8 @@
 .venv/
 venv/
 env/
+# Local embeddable Python (when no system Python is used)
+.python/
 
 # Python
 __pycache__/

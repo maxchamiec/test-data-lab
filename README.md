@@ -6,14 +6,33 @@ A project for experimenting with testing and generating test data.
 
 The script produces images in multiple formats with given dimensions (pixels and/or file size).
 
-### Setup (local env in project folder)
+### Setup (local env in project folder only)
 
-Create a virtual environment inside the project so dependencies are not installed system-wide:
+All dependencies are installed only inside the project folder (`.venv`). Nothing is installed system-wide.
+
+**Windows (PowerShell, project-only, no system install):**
+
+In the project folder run:
+
+```powershell
+cd test-data-lab
+.\setup.ps1
+```
+
+If no system Python is found, the script downloads the official Windows embeddable Python into `.python\` (inside the project), then creates `.venv` and installs all dependencies there. Nothing is installed system-wide. If you already have Python on PATH, it will use that to create `.venv` and install only into the project.
+
+Then start the app and open Chrome:
+
+```powershell
+.\run_app.ps1
+```
+
+**macOS / Linux:**
 
 ```bash
 cd test-data-lab
 python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate   # Windows Git Bash: .venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
@@ -56,7 +75,7 @@ python generate_images.py -i photo.jpg --formats png webp pdf -o ./converted
 | `--formats` | Multiple formats (space-separated) |
 | `--width` / `-W` | Width in pixels |
 | `--height` / `-H` | Height in pixels |
-| `--target-size` | Target file size (number = bytes, or 100kb, 2mb) |
+| `--target-size` | Target file size (number = bytes, or 100kb, 2mb, 5gb) |
 | `--output` / `-o` | Output directory (default `./output`) |
 | `--prefix` | Filename prefix |
 

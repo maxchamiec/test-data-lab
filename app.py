@@ -358,7 +358,8 @@ INDEX_HTML = r"""
       <p class="hint">Used only when no image is uploaded.</p>
 
       <h2>Optional</h2>
-      <label>Target file size (e.g. 50kb, 1mb)</label>
+      <label>Target file size (e.g. 50kb, 1mb, 5gb)</label>
+      <p class="hint" style="margin-top:0.25rem;">Leave empty for default. This sets the output <strong>file size only</strong>. Units: 1 TB = 1024 GB = 1 048 576 MB = 1 073 741 824 KB = 1 099 511 627 776 bytes.</p>
       <input type="text" name="target_size" placeholder="Leave empty for default">
 
       <label>Where to save</label>

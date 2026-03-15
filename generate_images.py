@@ -52,11 +52,11 @@ FORMATS = {
 
 
 def parse_size(value: str) -> int:
-    """Parse size: number in bytes or with kb/mb suffix."""
+    """Parse size: number in bytes or with kb/mb/gb suffix."""
     value = value.strip().lower()
-    m = re.match(r"^(\d+(?:\.\d+)?)\s*(kb|mb|bytes?)?$", value)
+    m = re.match(r"^(\d+(?:\.\d+)?)\s*(kb|mb|gb|tb|bytes?)?$", value)
     if not m:
-        raise ValueError(f"Invalid size: {value!r}. Examples: 1024, 100kb, 2mb")
+        raise ValueError(f"Invalid size: {value!r}. Examples: 1024, 100kb, 2mb, 5gb")
     num = float(m.group(1))
     unit = (m.group(2) or "bytes").rstrip("s")
     if unit == "byte" or unit == "bytes":
@@ -65,6 +65,10 @@ def parse_size(value: str) -> int:
         return int(num * 1024)
     if unit == "mb":
         return int(num * 1024 * 1024)
+    if unit == "gb":
+        return int(num * 1024 * 1024 * 1024)
+    if unit == "tb":
+        return int(num * 1024 * 1024 * 1024 * 1024)
     return int(num)
 
 
@@ -299,7 +303,7 @@ def main() -> None:
         "--target-size",
         type=str,
         metavar="SIZE",
-        help="Target file size, e.g. 1024, 50kb, 1mb.",
+        help="Target file size, e.g. 1024, 50kb, 1mb, 5gb.",
     )
     parser.add_argument(
         "-o", "--output",
