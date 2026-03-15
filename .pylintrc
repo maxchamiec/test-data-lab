@@ -1,0 +1,10 @@
+[MESSAGES CONTROL]
+# import-error: use Python interpreter from .venv so Flask/Pillow resolve
+# broad-exception-caught: outer catch in /generate is intentional (return 500)
+disable=import-error,broad-exception-caught
+
+[FORMAT]
+max-line-length=120
+
+[BASIC]
+missing-docstring=no

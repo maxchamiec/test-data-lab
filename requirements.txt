@@ -1,0 +1,14 @@
+# Core: image generation and formats
+Pillow>=10.0.0
+
+# HEIC/HEIF (optional format support)
+pillow-heif>=0.13.0
+
+# Pillow optional: more format support
+# - defusedxml: safe XMP metadata reading in JPEG/PNG/etc.
+defusedxml>=0.7.0
+# - olefile: read FPX and MIC image formats
+olefile>=0.46
+
+# Web UI (local only)
+Flask>=3.0.0

@@ -1,0 +1,16 @@
+---
+description: Language policy — agent may be addressed in any language; all code, comments, and docs in English
+alwaysApply: true
+---
+
+# Language Policy
+
+- **Communication**: You may address the agent in any language (e.g. Russian, English). The agent will understand and respond in the language you use.
+
+- **Code and artifacts**: All of the following must be written in **English**:
+  - Source code (identifiers, string literals used in the product, CLI messages)
+  - Comments and docstrings in code
+  - Documentation (README, docs, RULE files, commit messages)
+  - User-facing text produced by the agent for this project
+
+When adding or editing code, comments, or documentation, use English only. When replying to the user, you may use the language they used in their message.
