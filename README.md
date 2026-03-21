@@ -2,6 +2,8 @@
 
 A project for experimenting with testing and generating test data.
 
+**GitHub:** [maxchamiec/test-data-lab](https://github.com/maxchamiec/test-data-lab) — clone, pull, commit, and push workflow: see [GITHUB.md](GITHUB.md).
+
 ## Image generator
 
 The script produces images in multiple formats with given dimensions (pixels and/or file size).
